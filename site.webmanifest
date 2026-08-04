@@ -1,0 +1,16 @@
+{
+  "name": "Handwerk Plus",
+  "short_name": "Handwerk Plus",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d0f12",
+  "theme_color": "#f5ad00",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "800x142",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
