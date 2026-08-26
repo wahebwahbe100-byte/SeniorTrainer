@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SeniorTrainerinnen und SeniorTrainer in Stockelsdorf/Lübeck: ehrenamtliche Projekte, Termine, Kontakt und Möglichkeiten zum Mitmachen.">
+  <meta name="theme-color" content="#fff8ef">
+  <title>SeniorTrainer Stockelsdorf / Lübeck</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <style>
+    /* Lokale Korrektur: die beiden hinteren Projektbilder wie die vorderen Karten darstellen. */
+    .project-card .project-image-standard {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+    .project-card .project-image-standard img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Fallback, falls der Flohmarkt wegen des Tippfehlers in script.js sonst gar nicht erscheint. */
+    .schedule-manual-event {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      border-radius: 16px;
+      background: #fff;
+    }
+    .schedule-manual-event h3, .schedule-manual-event p { margin: 0; }
+    .schedule-manual-event p { margin-top: .25rem; }
+    .schedule-manual-date {
+      min-width: 64px;
+      text-align: center;
+      line-height: 1.05;
+    }
+    .schedule-manual-date strong, .schedule-manual-date span { display: block; }
+    .schedule-manual-date strong { font-size: 1.65rem; }
+    .schedule-manual-date span { margin-top: .2rem; font-size: .82rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#start" aria-label="SeniorTrainer Stockelsdorf/Lübeck – Startseite">
+        <img src="assets/images/logo-stockelsdorf.png" alt="SeniorTrainerin Kompetenzteam Stockelsdorf">
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+        <span class="sr-only">Menü öffnen</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation" data-menu>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#termine">Termine</a>
+        <a href="#aktuelles">Aktuelles</a>
+        <a href="#mitmachen">Mitmachen</a>
+        <a class="nav-cta" href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="start">
+      <div class="hero-decor hero-decor-one" aria-hidden="true"></div>
+      <div class="hero-decor hero-decor-two" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Ehrenamt in Stockelsdorf &amp; Lübeck</p>
+          <h1>Erfahrung, die<br><em>Menschen verbindet.</em></h1>
+          <p class="hero-lead">Wir bringen Lebens- und Berufserfahrung in soziale und kulturelle Projekte ein – freiwillig, unabhängig und mit Freude an Gemeinschaft.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projekte">Unsere Projekte <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#mitmachen">Bei uns mitmachen</a>
+          </div>
+          <div class="hero-trust" aria-label="Kurzinfo">
+            <div><strong>Seit 2009</strong><span>vor Ort aktiv</span></div>
+            <div><strong>16</strong><span>ausgebildete SeniorTrainer</span></div>
+            <div><strong>100 %</strong><span>ehrenamtlich</span></div>
+          </div>
+        </div>
+        <div class="hero-media reveal reveal-delay">
+          <div class="hero-image-wrap">
+            <img src="assets/images/hero.webp" alt="Seniorinnen und Senioren bei einem gemeinsamen Projekttreffen">
+            <div class="floating-card floating-card-top">
+              <span class="mini-icon" aria-hidden="true">♥</span>
+              <div><strong>Gemeinsam wirken</strong><small>mit Zeit, Ideen und Erfahrung</small></div>
+            </div>
+            <div class="floating-card floating-card-bottom">
+              <strong>Neue Ideen willkommen</strong>
+              <span>Wir unterstützen auch Ihr Projekt.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="Unser Selbstverständnis">
+      <div class="container intro-items">
+        <div><span aria-hidden="true">✓</span> selbstbestimmt</div>
+        <div><span aria-hidden="true">✓</span> generationsübergreifend</div>
+        <div><span aria-hidden="true">✓</span> gemeinwohlorientiert</div>
+        <div><span aria-hidden="true">✓</span> offen für neue Ideen</div>
+      </div>
+    </section>
+
+    <section class="section" id="ueber-uns">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <div class="portrait-frame">
+            <img src="assets/images/team.webp" alt="Das Team der SeniorTrainerinnen und SeniorTrainer in Stockelsdorf">
+          </div>
+          <div class="about-badge"><strong>16</strong><span>engagierte<br>Teammitglieder</span></div>
+        </div>
+        <div class="about-copy reveal reveal-delay">
+          <p class="eyebrow"><span></span> Wer wir sind</p>
+          <h2>Wissen weitergeben.<br>Gemeinschaft stärken.</h2>
+          <p>Wir sind Seniorinnen und Senioren, die sich gern engagieren. In vielfältigen sozialen und kulturellen Projekten geben wir unsere Lebens- und Berufserfahrung weiter – nach eigener Zeiteinteilung und im Austausch mit einem unterstützenden Team.</p>
+          <p>Das Kompetenzteam Stockelsdorf/Lübeck trifft sich regelmäßig zur Beratung. Wir entwickeln eigene Projekte, begleiten bestehende Angebote und helfen neuen Ideen auf den Weg.</p>
+          <aside class="definition-card">
+            <div class="quote-mark" aria-hidden="true">“</div>
+            <p><strong>„Senior“</strong> steht für erfahren und leitend. <strong>„Trainer“</strong> bedeutet für uns beraten, unterstützen und fördern.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="projekte">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow justify-center"><span></span> Was wir tun <span></span></p>
+          <h2>Unsere Projekte</h2>
+          <p>So vielfältig wie unsere Erfahrungen: Entdecken Sie Angebote für Kinder, Erwachsene und ältere Menschen.</p>
+        </div>
+
+        <div class="filter-row" role="group" aria-label="Projekte filtern">
+          <button class="filter-button is-active" type="button" data-filter="all">Alle</button>
+          <button class="filter-button" type="button" data-filter="generationen">Generationen</button>
+          <button class="filter-button" type="button" data-filter="gemeinschaft">Gemeinschaft</button>
+          <button class="filter-button" type="button" data-filter="hilfe">Unterstützung</button>
+        </div>
+
+        <div class="projects-grid" data-project-grid>
+          <article class="project-card reveal" data-category="generationen">
+            <div class="project-image"><img src="assets/images/reading.webp" alt="Kinder beim gemeinsamen Lesen"></div>
+            <div class="project-content"><span class="project-kicker">Kinder &amp; Bildung</span><h3>Lesepatenschaften</h3><p>Wir fördern Grundschulkinder beim Lesen – einzeln, geduldig und mit Freude an Geschichten.</p><span class="project-meta">Termine nach Vereinbarung</span></div>
+          </article>
+          <article class="project-card reveal" data-category="gemeinschaft">
+            <div class="project-image"><img src="assets/images/games.webp" alt="Gemeinsamer Spielenachmittag"></div>
+            <div class="project-content"><span class="project-kicker">Begegnung</span><h3>Spielenachmittage</h3><p>Gemeinsam spielen, lachen und neue Kontakte knüpfen – ein offenes Angebot für Seniorinnen und Senioren.</p><span class="project-meta">Regelmäßiges Angebot</span></div>
+          </article>
+          <article class="project-card reveal" data-category="gemeinschaft">
+            <div class="project-image"><img src="assets/images/knitting.webp" alt="Handarbeiten bei der Stricknacht"></div>
+            <div class="project-content"><span class="project-kicker">Kreativität</span><h3>Strickabende</h3><p>Handarbeiten in geselliger Runde: Ideen austauschen, voneinander lernen und gemeinsam kreativ sein.</p><span class="project-meta">Termine werden angekündigt</span></div>
+          </article>
+          <article class="project-card reveal" data-category="hilfe">
+            <div class="project-image"><img src="assets/images/integration.webp" alt="Deutschunterricht in einer kleinen Gruppe"></div>
+            <div class="project-content"><span class="project-kicker">Integration</span><h3>Migrationsunterstützung</h3><p>Deutsch lernen in kleinen Gruppen und praktische Begleitung beim Ankommen im Alltag.</p><span class="project-meta">Nach persönlicher Absprache</span></div>
+          </article>
+          <article class="project-card reveal" data-category="gemeinschaft">
+            <div class="project-image"><img src="assets/images/soup.webp" alt="Multikulturelles Suppenfest in Stockelsdorf"></div>
+            <div class="project-content"><span class="project-kicker">Kultur &amp; Genuss</span><h3>Multikulturelles Suppenfest</h3><p>Menschen kochen Suppen aus ihren Heimatländern – und bringen bei Tisch Kulturen miteinander ins Gespräch.</p><span class="project-meta">Zweimal im Jahr</span></div>
+          </article>
+          <article class="project-card reveal" data-category="gemeinschaft">
+            <div class="project-image image-focus-top"><img src="assets/images/platt.webp" alt="Treffen zum Plattschnacken"></div>
+            <div class="project-content"><span class="project-kicker">Sprache &amp; Heimat</span><h3>Platt schnacken</h3><p>Niederdeutsch hören, sprechen und gemeinsam lebendig halten – für Kinder und Erwachsene.</p><span class="project-meta">4. Freitag im Monat, 15 Uhr</span></div>
+          </article>
+          <article class="project-card reveal" data-category="hilfe">
+            <div class="project-image project-image-standard"><img src="assets/images/selfhelp.webp" alt="Ansprechpartnerin der Selbsthilfegruppe"></div>
+            <div class="project-content"><span class="project-kicker">Selbsthilfe</span><h3>Verlassene Eltern</h3><p>Geschützter Austausch für Eltern, deren erwachsene Kinder den Kontakt seit längerer Zeit abgebrochen haben.</p><span class="project-meta">Zweimal im Monat</span></div>
+          </article>
+          <article class="project-card reveal" data-category="hilfe">
+            <div class="project-image project-image-standard"><img src="assets/images/security.webp" alt="Informationsstand zur Sicherheitsberatung"></div>
+            <div class="project-content"><span class="project-kicker">Prävention</span><h3>Sicherheitsberatung</h3><p>Praktische Hinweise, damit ältere Menschen Betrugsmaschen erkennen und sich im Alltag sicherer fühlen.</p><span class="project-meta">Termine auf Anfrage</span></div>
+          </article>
+        </div>
+
+        <div class="ideas-banner reveal">
+          <div class="ideas-icon" aria-hidden="true">✦</div>
+          <div><span>Ihre Idee fehlt noch?</span><h3>Repair-Café, Gärtnern mit Kindern oder IT-Hilfe für Senioren</h3><p>Wir freuen uns über Menschen, die ein neues Projekt mitbringen und gemeinsam mit uns umsetzen möchten.</p></div>
+          <a class="button button-light" href="#kontakt">Idee vorstellen <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="termine">
+      <div class="container schedule-grid">
+        <div class="schedule-copy reveal">
+          <p class="eyebrow"><span></span> Gemeinsam vor Ort</p>
+          <h2>Die nächsten Termine</h2>
+          <p>Unsere regelmäßigen Treffen werden automatisch aktuell angezeigt. Für projektbezogene Termine sprechen Sie uns bitte direkt an.</p>
+          <div class="location-card">
+            <span class="location-pin" aria-hidden="true">⌖</span>
+            <div><strong>Lotsendienst Stockelsdorf</strong><span>Segeberger Straße 10<br>23617 Stockelsdorf</span></div>
+          </div>
+        </div>
+        <div class="schedule-list reveal reveal-delay" data-schedule-list aria-live="polite">
+          <noscript>Bitte aktivieren Sie JavaScript, um die nächsten berechneten Termine zu sehen.</noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news-section" id="aktuelles">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Aktuelles</p>
+          <div class="heading-row"><h2>Was uns gerade bewegt</h2><a href="#kontakt">Kontakt aufnehmen <span aria-hidden="true">→</span></a></div>
+        </div>
+        <div class="news-grid">
+          <article class="news-feature reveal">
+            <div class="news-label">Mitmachen</div>
+            <h3>Wir suchen Verstärkung für unser Team</h3>
+            <p>Sie befinden sich im nachberuflichen Lebensabschnitt – oder bereiten sich darauf vor – und möchten Ihre Erfahrungen sinnvoll einbringen? Lernen Sie uns unverbindlich kennen.</p>
+            <a href="#mitmachen">Mehr über den Einstieg <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="news-card reveal">
+            <span class="news-number">01</span><div><h3>Neue Projektideen willkommen</h3><p>Wir unterstützen Sie dabei, aus einer guten Idee ein tragfähiges ehrenamtliches Angebot zu entwickeln.</p></div>
+          </article>
+          <article class="news-card reveal">
+            <span class="news-number">02</span><div><h3>Suppenfest verbindet Kulturen</h3><p>Zweimal im Jahr laden vielfältige Suppen und persönliche Begegnungen zum Austausch ein.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="mitmachen">
+      <div class="container training-grid">
+        <div class="training-copy reveal">
+          <p class="eyebrow eyebrow-light"><span></span> Ausbildung &amp; Mitmachen</p>
+          <h2>Starten Sie mit uns<br>in ein neues Ehrenamt.</h2>
+          <p>Neue Interessierte werden in der Einführungsphase vom Team Stockelsdorf begleitet und können zunächst in bestehende Projekte hineinschnuppern.</p>
+          <a class="button button-primary" href="#kontakt">Unverbindlich kennenlernen</a>
+        </div>
+        <div class="training-steps reveal reveal-delay">
+          <div class="step"><span>1</span><div><h3>Kennenlernen</h3><p>Besuchen Sie unseren Lotsendienst oder nehmen Sie telefonisch Kontakt auf.</p></div></div>
+          <div class="step"><span>2</span><div><h3>Ausprobieren</h3><p>Wir ermöglichen Ihnen, bei passenden bestehenden Projekten mitzuwirken.</p></div></div>
+          <div class="step"><span>3</span><div><h3>Weiterbildung</h3><p>Ein zweiteiliges Seminar vermittelt Grundlagen für das Initiieren und Leiten von Projekten.</p></div></div>
+          <div class="step"><span>4</span><div><h3>Eigene Ideen umsetzen</h3><p>Im Team und Netzwerk erhalten Sie Austausch, Unterstützung und thematische Fortbildungen.</p></div></div>
+        </div>
+      </div>
+      <div class="container support-note reveal">
+        <strong>Gut zu wissen:</strong>
+        <span>Die Aus- und Weiterbildung, zum Beispiel in der Akademie am See in Plön, ist für angehende und ernannte SeniorTrainerinnen und SeniorTrainer kostenfrei.</span>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="kontakt">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow"><span></span> Kontakt</p>
+          <h2>Lassen Sie uns<br>ins Gespräch kommen.</h2>
+          <p>Ob Sie mitmachen, ein Projekt besuchen oder eine eigene Idee einbringen möchten: Wir freuen uns auf Ihre Nachricht.</p>
+          <div class="contact-people">
+            <a class="contact-person" href="tel:+4945188051591"><span class="contact-icon" aria-hidden="true">☎</span><div><small>Ansprechpartnerin</small><strong>Helga Holthusen</strong><span>0451 88051591</span></div></a>
+            <a class="contact-person" href="tel:+4916095375291"><span class="contact-icon" aria-hidden="true">☎</span><div><small>Ansprechpartner</small><strong>Hermann Roks</strong><span>0160 95375291</span></div></a>
+            <a class="contact-person" href="mailto:stockelsdorf@seniortrainer-sh.de"><span class="contact-icon" aria-hidden="true">✉</span><div><small>E-Mail</small><strong>Team Stockelsdorf/Lübeck</strong><span>stockelsdorf@seniortrainer-sh.de</span></div></a>
+          </div>
+          <div class="visit-note"><strong>Persönlich vorbeikommen</strong><span>Jeden ersten Montag im Monat ab 15 Uhr im Lotsendienst, Segeberger Straße 10.</span></div>
+        </div>
+
+        <form class="contact-form reveal reveal-delay" data-contact-form>
+          <div class="form-heading"><span>Nachricht senden</span><small>Wir antworten persönlich.</small></div>
+          <div class="form-row">
+            <label>Ihr Name<input type="text" name="name" autocomplete="name" required></label>
+            <label>Telefon <span>(optional)</span><input type="tel" name="phone" autocomplete="tel"></label>
+          </div>
+          <label>Ihre E-Mail<input type="email" name="email" autocomplete="email" required></label>
+          <label>Worum geht es?
+            <select name="topic">
+              <option>Ich möchte mitmachen</option>
+              <option>Ich interessiere mich für ein Projekt</option>
+              <option>Ich habe eine neue Projektidee</option>
+              <option>Sonstige Frage</option>
+            </select>
+          </label>
+          <label>Ihre Nachricht<textarea name="message" rows="5" required></textarea></label>
+          <p class="privacy-hint">Mit dem Absenden öffnet sich Ihr E-Mail-Programm. Es werden keine Daten auf dieser Website gespeichert.</p>
+          <button class="button button-primary form-submit" type="submit">E-Mail vorbereiten <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand"><img src="assets/images/logo-initiative.png" alt="seniorTrainerin – Die Initiative ergreifen"><p>Kompetenzteam Stockelsdorf/Lübeck<br>im Landesnetzwerk Schleswig-Holstein</p></div>
+      <div class="footer-links"><strong>Schnellzugriff</strong><a href="#ueber-uns">Über uns</a><a href="#projekte">Projekte</a><a href="#termine">Termine</a><a href="#kontakt">Kontakt</a></div>
+      <div class="footer-links"><strong>Weitere Informationen</strong><a href="https://www.seniortrainer-sh.de/" target="_blank" rel="noopener">Landesnetzwerk S-H</a><a href="https://www.seniortrainer-sh.de/weiterbildung/" target="_blank" rel="noopener">Weiterbildung</a><a href="https://www.seniortrainer-sh.de/anlaufstellen/" target="_blank" rel="noopener">Anlaufstellen</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span data-year></span> SeniorTrainer Stockelsdorf/Lübeck</span><span>Engagiert. Erfahren. Gemeinsam.</span></div>
+  </footer>
+
+  <script>
+    /*
+      Korrekturen, die auch für Inhalte aus script.js greifen:
+      - Flohmarkt: Jahreszahl 2926 -> 2026
+      - Platt schnacken: 4. statt letzter Freitag; angezeigte Datumswerte werden angepasst
+      - alle Links zur Team-E-Mail erhalten zuverlässig denselben mailto:-Link
+      - Kontaktformular öffnet zuverlässig eine vorbereitete E-Mail
+    */
+    (function () {
+      const TEAM_EMAIL = 'stockelsdorf@seniortrainer-sh.de';
+
+      function fourthFriday(year, month) {
+        const first = new Date(year, month - 1, 1);
+        const firstFriday = 1 + ((5 - first.getDay() + 7) % 7);
+        return firstFriday + 21;
+      }
+
+      const monthNames = {
+        januar: 1, februar: 2, märz: 3, maerz: 3, april: 4, mai: 5, juni: 6,
+        juli: 7, august: 8, september: 9, oktober: 10, november: 11, dezember: 12
+      };
+
+      function fixPlattDateInText(text) {
+        // Numeric German date: DD.MM.YYYY
+        text = text.replace(/\b(\d{1,2})\.(\d{1,2})\.(\d{4})\b/g, function (_, d, m, y) {
+          const month = Number(m), year = Number(y);
+          return String(fourthFriday(year, month)).padStart(2, '0') + '.' + String(month).padStart(2, '0') + '.' + year;
+        });
+
+        // Written German date: 27. November 2026
+        text = text.replace(/\b(\d{1,2})\.\s*(Januar|Februar|März|Maerz|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+(\d{4})\b/gi,
+          function (_, d, name, y) {
+            const month = monthNames[name.toLowerCase()];
+            return fourthFriday(Number(y), month) + '. ' + name + ' ' + y;
+          });
+        return text;
+      }
+
+      function ensureFlohmarkt(root) {
+        if (/flohmarkt/i.test(root.textContent || '')) return;
+
+        const card = document.createElement('article');
+        card.className = 'schedule-manual-event';
+        card.dataset.date = '2026-10-31';
+        card.innerHTML = '<div class="schedule-manual-date"><strong>31</strong><span>Okt 2026</span></div>'
+          + '<div><h3>Flohmarkt</h3><p>31.10.2026</p></div>';
+        root.appendChild(card);
+      }
+
+      function fixSchedule() {
+        const root = document.querySelector('[data-schedule-list]');
+        if (!root) return;
+
+        // Fix the explicit typo wherever script.js renders it.
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(function (node) {
+          if (node.nodeValue && node.nodeValue.includes('2926')) {
+            node.nodeValue = node.nodeValue.replace(/2926/g, '2026');
+          }
+          if (node.nodeValue && /Letzter Freitag im Monat/i.test(node.nodeValue)) {
+            node.nodeValue = node.nodeValue.replace(/Letzter Freitag im Monat/gi, '4. Freitag im Monat');
+          }
+        });
+
+        // If a generated schedule entry is for Platt schnacken, correct its displayed date
+        // to the 4th Friday of that month (relevant in months with five Fridays).
+        Array.from(root.children).forEach(function (entry) {
+          if (!/platt\s*schnack/i.test(entry.textContent || '')) return;
+          const entryWalker = document.createTreeWalker(entry, NodeFilter.SHOW_TEXT);
+          const entryNodes = [];
+          while (entryWalker.nextNode()) entryNodes.push(entryWalker.currentNode);
+          entryNodes.forEach(function (node) {
+            const oldValue = node.nodeValue || '';
+            const newValue = fixPlattDateInText(oldValue);
+            if (newValue !== oldValue) node.nodeValue = newValue;
+          });
+        });
+
+        ensureFlohmarkt(root);
+      }
+
+      function fixEmailLinks() {
+        document.querySelectorAll('a').forEach(function (link) {
+          const href = link.getAttribute('href') || '';
+          const text = link.textContent || '';
+          if (href.toLowerCase().startsWith('mailto:') || href.toLowerCase().includes(TEAM_EMAIL) || text.toLowerCase().includes(TEAM_EMAIL)) {
+            if (href !== 'mailto:' + TEAM_EMAIL) link.setAttribute('href', 'mailto:' + TEAM_EMAIL);
+          }
+        });
+      }
+
+      function wireContactForm() {
+        const form = document.querySelector('[data-contact-form]');
+        if (!form || form.dataset.mailFixed === 'true') return;
+        form.dataset.mailFixed = 'true';
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          const data = new FormData(form);
+          const name = String(data.get('name') || '').trim();
+          const phone = String(data.get('phone') || '').trim();
+          const sender = String(data.get('email') || '').trim();
+          const topic = String(data.get('topic') || 'Kontakt über die Homepage').trim();
+          const message = String(data.get('message') || '').trim();
+
+          const body = [
+            message,
+            '',
+            '---',
+            'Name: ' + name,
+            'E-Mail: ' + sender,
+            phone ? 'Telefon: ' + phone : ''
+          ].filter(Boolean).join('\n');
+
+          window.location.href = 'mailto:' + TEAM_EMAIL
+            + '?subject=' + encodeURIComponent(topic)
+            + '&body=' + encodeURIComponent(body);
+        }, true);
+      }
+
+      function applyFixes() {
+        fixEmailLinks();
+        fixSchedule();
+        wireContactForm();
+      }
+
+      window.addEventListener('DOMContentLoaded', function () {
+        applyFixes();
+
+        const schedule = document.querySelector('[data-schedule-list]');
+        if (schedule) {
+          new MutationObserver(applyFixes).observe(schedule, { childList: true, subtree: true, characterData: true });
+        }
+      });
+    }());
+  </script>
+
+</body>
+</html>
