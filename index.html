@@ -860,6 +860,48 @@
       .home-link svg{width:33px;height:33px}
       .site-header .main-nav{inset:64px 0 auto 0;margin:0}
     }
+    /* Mobile: menu trigger fixed on the far right */
+    @media(max-width:760px){
+      .site-header .nav-wrap{
+        position:relative;
+        justify-content:flex-start;
+        padding-right:68px;
+      }
+      .site-header .menu-toggle{
+        position:absolute;
+        left:auto;
+        right:0;
+        top:50%;
+        transform:translateY(-50%);
+        z-index:103;
+        display:block;
+        width:56px;
+        height:56px;
+        margin:0;
+        padding:14px 11px;
+        border-radius:0;
+        background:#c90018;
+        box-shadow:0 4px 0 rgba(55,63,68,.28);
+      }
+      .site-header .menu-toggle:hover,
+      .site-header .menu-toggle:focus-visible{background:#b90016}
+      .site-header .menu-toggle:focus-visible{outline:3px solid #fff;outline-offset:-4px}
+      .site-header .menu-toggle span{height:3px;margin:5px 0;background:#fff}
+      .site-header .home-link{
+        position:relative;
+        left:auto;
+        right:auto;
+        margin-left:0;
+        margin-right:auto;
+        order:initial;
+      }
+      .site-header .main-nav{
+        left:0;
+        right:0;
+        width:100%;
+      }
+    }
+
 </style>
 
 </head>
@@ -1094,8 +1136,16 @@
 <dialog aria-label="Bildansicht" class="lightbox"><button aria-label="Bild schließen" class="lightbox-close" type="button">×</button><img alt="Vergrößerte Projektaufnahme" src=""/></dialog>
 <script>
   const menuButton=document.querySelector('.menu-toggle');const navigation=document.querySelector('.main-nav');
-  menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));navigation.classList.toggle('is-open',!open)});
-  navigation?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menuButton?.setAttribute('aria-expanded','false');navigation.classList.remove('is-open')}));
+  const closeMenu=()=>{menuButton?.setAttribute('aria-expanded','false');navigation?.classList.remove('is-open')};
+  closeMenu();
+  menuButton?.addEventListener('click',()=>{
+    const open=menuButton.getAttribute('aria-expanded')==='true';
+    menuButton.setAttribute('aria-expanded',String(!open));
+    navigation?.classList.toggle('is-open',!open);
+    menuButton.setAttribute('aria-label',open?'Menü öffnen':'Menü schließen');
+  });
+  navigation?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const heroSlides=[...document.querySelectorAll('.hero-slide')];
   if(heroSlides.length>1 && !reduce){let heroIndex=0;setInterval(()=>{heroSlides[heroIndex].classList.remove('is-active');heroIndex=(heroIndex+1)%heroSlides.length;heroSlides[heroIndex].classList.add('is-active')},4000)}
