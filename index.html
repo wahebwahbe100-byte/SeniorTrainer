@@ -74,8 +74,6 @@
     .main-photo{width:88%;height:580px;object-fit:cover;object-position:center 40%;border-radius:38px;box-shadow:var(--shadow)}
     .accent-card{position:absolute;right:0;bottom:20px;width:49%;padding:24px;border-radius:22px;color:#fff;background:var(--blue);box-shadow:var(--shadow)}
     .accent-card span,.accent-card strong{display:block}.accent-card strong{font-size:1.2rem}
-    .accent-card .accent-contact{margin:12px 0 0;font-size:.92rem;font-weight:700;line-height:1.45}
-    .accent-card .accent-contact a{color:#fff;text-decoration:underline;text-underline-offset:2px}
     .section-copy>p:not(.eyebrow){color:var(--muted);font-size:1.06rem}
     .check-list{list-style:none;margin:28px 0;padding:0;display:grid;gap:14px}
     .check-list li{position:relative;padding-left:34px;font-weight:700}
@@ -862,53 +860,6 @@
       .home-link svg{width:33px;height:33px}
       .site-header .main-nav{inset:64px 0 auto 0;margin:0}
     }
-    /* Mobile: menu trigger fixed on the far right */
-    @media(max-width:760px){
-      .site-header .nav-wrap{
-        position:relative;
-        justify-content:flex-start;
-        padding-right:68px;
-      }
-      .site-header .menu-toggle{
-        position:absolute;
-        left:auto;
-        right:0;
-        top:50%;
-        transform:translateY(-50%);
-        z-index:103;
-        display:block;
-        width:56px;
-        height:56px;
-        margin:0;
-        padding:14px 11px;
-        border-radius:0;
-        background:#c90018;
-        box-shadow:0 4px 0 rgba(55,63,68,.28);
-      }
-      .site-header .menu-toggle:hover,
-      .site-header .menu-toggle:focus-visible{background:#b90016}
-      .site-header .menu-toggle:focus-visible{outline:3px solid #fff;outline-offset:-4px}
-      .site-header .menu-toggle span{height:3px;margin:5px 0;background:#fff}
-      .site-header .home-link{
-        position:relative;
-        left:auto;
-        right:auto;
-        margin-left:0;
-        margin-right:auto;
-        order:initial;
-      }
-      .site-header .main-nav{
-        position:absolute;
-        inset:100% 0 auto 0;
-        left:0;
-        right:0;
-        top:100%;
-        width:100%;
-        margin:0;
-        z-index:101;
-      }
-    }
-
 </style>
 
 </head>
@@ -946,7 +897,7 @@
 </section>
 <section class="section intro" id="ueber-uns">
 <div class="container split">
-<div class="image-stack reveal"><img alt="SeniorTrainerinnen und SeniorTrainer in Stockelsdorf" class="main-photo" src="wer.jpg"/><div class="accent-card"><span>Teil des landesweiten Netzwerkes</span><strong>Schleswig-Holstein</strong><p class="accent-contact">Kontakt und Infos: Marlene <a href="tel:+491752077924">01752077924</a></p></div></div>
+<div class="image-stack reveal"><img alt="SeniorTrainerinnen und SeniorTrainer in Stockelsdorf" class="main-photo" src="wer.jpg"/><div class="accent-card"><span>Teil des landesweiten Netzwerkes</span><strong>Schleswig-Holstein</strong></div></div>
 <div class="section-copy reveal"><p class="eyebrow">Wer wir sind</p><h2>Ehrenamt mit Lebens- und Berufserfahrung</h2><p>Wir sind Seniorinnen und Senioren, die sich gerne engagieren. Wir geben unsere Lebens- und Berufserfahrung weiter und arbeiten unabhängig sowie nach eigener Zeiteinteilung.</p><ul class="check-list"><li>Vielfältige soziale und kulturelle Projekte</li><li>Eigenständige und flexible Zeiteinteilung</li><li>Regelmäßiger Austausch und gegenseitige Unterstützung</li><li>Raum für eigene Ideen und neue Vorhaben</li></ul></div>
 </div>
 </section>
@@ -968,6 +919,7 @@
     <span class="tag">Selbsthilfegruppe</span>
     <h3>Verlassene Eltern</h3>
     <p>In der Selbsthilfegruppe treffen sich zweimal im Monat Eltern, deren Kinder den Kontakt zu ihnen seit mindestens einem halben Jahr abgebrochen haben.</p>
+    <p><strong>Kontakt und Infos:</strong> Marlene <a href="tel:+491752077924">01752077924</a></p>
   </div>
 </article>
 <article class="project-card reveal" id="beratung-senioren">
@@ -1142,16 +1094,8 @@
 <dialog aria-label="Bildansicht" class="lightbox"><button aria-label="Bild schließen" class="lightbox-close" type="button">×</button><img alt="Vergrößerte Projektaufnahme" src=""/></dialog>
 <script>
   const menuButton=document.querySelector('.menu-toggle');const navigation=document.querySelector('.main-nav');
-  const closeMenu=()=>{menuButton?.setAttribute('aria-expanded','false');navigation?.classList.remove('is-open')};
-  closeMenu();
-  menuButton?.addEventListener('click',()=>{
-    const open=menuButton.getAttribute('aria-expanded')==='true';
-    menuButton.setAttribute('aria-expanded',String(!open));
-    navigation?.classList.toggle('is-open',!open);
-    menuButton.setAttribute('aria-label',open?'Menü öffnen':'Menü schließen');
-  });
-  navigation?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
-  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
+  menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));navigation.classList.toggle('is-open',!open)});
+  navigation?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menuButton?.setAttribute('aria-expanded','false');navigation.classList.remove('is-open')}));
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const heroSlides=[...document.querySelectorAll('.hero-slide')];
   if(heroSlides.length>1 && !reduce){let heroIndex=0;setInterval(()=>{heroSlides[heroIndex].classList.remove('is-active');heroIndex=(heroIndex+1)%heroSlides.length;heroSlides[heroIndex].classList.add('is-active')},4000)}
