@@ -142,6 +142,8 @@
     }
     .project-card:hover .project-image img{transform:scale(1.025)}
     .project-image.portrait img{object-position:center 28%}
+    /* SHG Verlassene Eltern: Bild etwas höher */
+    #eltern .project-image{aspect-ratio:16/11}
     .project-body{
       flex:1;
       display:flex;
@@ -858,7 +860,20 @@
       .site-header .nav-wrap{height:64px;justify-content:space-between}
       .home-link{flex-basis:64px;height:69px;margin-top:-5px}
       .home-link svg{width:33px;height:33px}
-      .site-header .main-nav{inset:64px 0 auto 0;margin:0}
+      .site-header .main-nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        bottom:auto;
+        margin:0;
+        padding:0 28px 18px;
+        transform:translateY(-12px);
+        border-top:1px solid rgba(255,255,255,.22);
+      }
+      .site-header .main-nav.is-open{transform:translateY(0)}
+      .site-header .main-nav a{padding:18px 10px}
+      .site-header .menu-toggle{margin-left:auto;flex:0 0 48px;width:48px;height:48px}
     }
 </style>
 
@@ -917,9 +932,9 @@
   </div>
   <div class="project-body">
     <span class="tag">Selbsthilfegruppe</span>
-    <h3>Verlassene Eltern</h3>
+    <h3>SHG Verlassene Eltern</h3>
     <p>In der Selbsthilfegruppe treffen sich zweimal im Monat Eltern, deren Kinder den Kontakt zu ihnen seit mindestens einem halben Jahr abgebrochen haben.</p>
-    <p><strong>Kontakt und Infos:</strong> Marlene <a href="tel:+491752077924">01752077924</a></p>
+    <p class="project-meta">Kontakt und Infos: Marlene <a href="tel:+491752077924">01752077924</a></p>
   </div>
 </article>
 <article class="project-card reveal" id="beratung-senioren">
