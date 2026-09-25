@@ -729,6 +729,10 @@
     .termine-event{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:27px 29px;align-items:start}
     .termine-event time{display:grid;place-items:center;min-height:52px;padding:10px;border-radius:12px;color:#fff;background:var(--orange);font-weight:900;text-align:center}
     .termine-event p{margin:10px 0 0;color:var(--muted)}
+    .termine-event-poster{grid-template-columns:132px minmax(0,1fr) minmax(190px,260px);align-items:center}
+    .termine-event-poster .event-copy p{max-width:48ch}
+    .termine-event-poster .event-poster{margin:0;overflow:hidden;border-radius:16px;border:1px solid var(--line);background:#f7f7f7;box-shadow:0 8px 22px rgba(33,41,49,.10)}
+    .termine-event-poster .event-poster img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 24%}
     #termine{scroll-margin-top:90px}
 
     @media(max-width:860px){
@@ -740,6 +744,8 @@
       .termine-dates{grid-template-columns:1fr}
       .termine-event{grid-template-columns:1fr;gap:15px;padding:24px}
       .termine-event time{display:inline-grid;justify-self:start;min-height:0;padding:9px 13px}
+      .termine-event-poster{grid-template-columns:1fr}
+      .termine-event-poster .event-poster{width:min(100%,390px);justify-self:center}
     }
 
 
@@ -875,6 +881,77 @@
       .site-header .main-nav a{padding:18px 10px}
       .site-header .menu-toggle{margin-left:auto;flex:0 0 48px;width:48px;height:48px}
     }
+
+
+    /* Erfolgreiches Engagement */
+    .engagement-success{
+      background:linear-gradient(180deg,#fff 0%,#fffaf3 100%);
+      border-bottom:1px solid var(--line);
+    }
+    .engagement-success .engagement-wrap{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(380px,.95fr);
+      gap:54px;
+      align-items:start;
+    }
+    .engagement-success .engagement-copy{max-width:780px}
+    .engagement-success .engagement-copy h2{
+      margin:8px 0 10px;
+      max-width:760px;
+    }
+    .engagement-success .engagement-lead{
+      margin:0 0 28px;
+      color:var(--navy);
+      font-size:1.14rem;
+      font-weight:800;
+      line-height:1.55;
+    }
+    .engagement-success .engagement-copy h3{
+      margin:28px 0 12px;
+      color:var(--navy);
+      font-size:1.34rem;
+      line-height:1.35;
+      letter-spacing:-.015em;
+    }
+    .engagement-success .engagement-copy p:not(.eyebrow):not(.engagement-lead){
+      margin:0 0 17px;
+      color:var(--muted);
+      font-size:1.04rem;
+      line-height:1.78;
+    }
+    .engagement-photos{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .engagement-photo{
+      margin:0;
+      overflow:hidden;
+      border-radius:22px;
+      background:#eee;
+      box-shadow:0 14px 35px rgba(33,41,49,.14);
+    }
+    .engagement-photo img{
+      display:block;
+      width:100%;
+      aspect-ratio:3/4;
+      object-fit:cover;
+    }
+    .engagement-photo:first-child{margin-top:38px}
+    @media(max-width:980px){
+      .engagement-success .engagement-wrap{grid-template-columns:1fr;gap:34px}
+      .engagement-success .engagement-copy{max-width:none}
+      .engagement-photos{max-width:760px}
+      .engagement-photo:first-child{margin-top:0}
+    }
+    @media(max-width:560px){
+      .engagement-photos{grid-template-columns:1fr;gap:14px}
+      .engagement-photo img{aspect-ratio:4/5}
+      .engagement-success .engagement-lead{font-size:1.05rem}
+      .engagement-success .engagement-copy h3{font-size:1.22rem}
+    }
+
 </style>
 
 </head>
@@ -905,9 +982,26 @@
 <div class="container hero-welcome-inner reveal">
 <h1 id="hero-title">Herzlich Willkommen</h1>
 <p class="hero-welcome-intro">beim Team der Seniortrainerinnen<br/>in Stockelsdorf/Lübeck</p>
-<p>Teil des Landesweiten Netzwerkes Schleswig-Holstein</p>
+<p>Teil des landesweiten Netzwerkes Schleswig-Holstein</p>
 <p>Uns macht ehrenamtliches Engagement<br/>Freude, auch weil es anderen hilft!</p>
 <p class="hero-welcome-final">Wir suchen Nachwuchs an Personen, die sich im<br/>nachberuflichen Lebensabschnitt befinden oder sich länger<br/>darauf vorbereiten wollen.</p>
+</div>
+</section>
+
+<section class="section engagement-success" id="erfolgreiches-engagement" aria-labelledby="engagement-title">
+<div class="container engagement-wrap">
+<div class="engagement-copy reveal">
+<p class="eyebrow">Erfolgreiches Engagement</p>
+<h2 id="engagement-title">60 Jahre Gemeindebücherei Stockelsdorf</h2>
+<p class="engagement-lead">Ein buntes Jubiläumsfest im Zeichen der Gemeinschaft und des guten Zwecks</p>
+<p>Mit einem rundum gelungenen Sommerfest feierte die Gemeindebücherei Stockelsdorf am 19. September 2026 ihr 60-jähriges Bestehen. Der Garten der Villa Jebsen, dem Standort der Bücherei, verwandelte sich in eine lebendige Festmeile für die ganze Familie.</p>
+<h3>Ehrenamtlicher Einsatz der seniorTrainerIn bringt stolzen Erlös für den guten Zweck</h3>
+<p>Die seniorTrainerIn des Kompetenzteams Stockelsdorf/Lübeck brachten sich mit großem Engagement in die Feierlichkeiten ein. Die Ehrenamtlichen verkauften Kaffee und eine große Auswahl an selbstgebackenen Kuchen. Der gesamte Erlös aus dem Verkauf kommt ohne Abzüge dem Verein Praxis ohne Grenzen - Ostholstein e.V. in Stockelsdorf zugute. Die Einrichtung leistet unverzichtbare Arbeit in der Region, indem sie Menschen ohne ausreichenden Krankenversicherungsschutz oder in finanziellen Notlagen kostenlos und unbürokratisch medizinisch versorgt.</p>
+</div>
+<div class="engagement-photos reveal" aria-label="Bilder vom Jubiläumsfest der Gemeindebücherei Stockelsdorf">
+<figure class="engagement-photo"><img src="buecherei-jubilaeum-1.jpeg" alt="Ehrenamtliche seniorTrainerinnen beim Kaffee- und Kuchenverkauf zum Jubiläumsfest" loading="lazy" decoding="async"/></figure>
+<figure class="engagement-photo"><img src="buecherei-jubilaeum-2.jpeg" alt="Stand der seniorTrainerinnen beim Jubiläumsfest im Garten der Villa Jebsen" loading="lazy" decoding="async"/></figure>
+</div>
 </div>
 </section>
 <section class="section intro" id="ueber-uns">
@@ -1028,7 +1122,7 @@
 <h3>Monatliche Treffen</h3>
 <div class="termine-location">Um 15 Uhr in der Segeberger Straße 10</div>
 <ul aria-label="Termine der monatlichen Treffen" class="termine-dates">
-<li><time datetime="2026-09-07">7.9.2026</time></li>
+
 <li><time datetime="2026-10-05">5.10.2026</time></li>
 <li><time datetime="2026-11-02">2.11.2026</time></li>
 <li><time datetime="2026-12-07">7.12.2026</time></li>
@@ -1036,19 +1130,23 @@
 </ul>
 </article>
 <div class="termine-events">
-<article class="termine-card termine-event reveal">
-<time datetime="2026-09-19">19.9.2026</time>
-<div>
-<h3>Fest zum 60-jährigen Bestehen der Bücherei Stockelsdorf</h3>
-<p>Teilnahme am Fest zum 60-jährigen Bestehen der Bücherei Stockelsdorf im Garten der Villa Jepsen. Die SeniorTrainer bieten Kaffee und Kuchen an.</p>
-</div>
-</article>
+
 <article class="termine-card termine-event reveal">
 <time datetime="2026-10-31">31.10.2026</time>
 <div>
 <h3>Flohmarkt</h3>
 <p>Flohmarkt im Gemeindehaus Ahrensböker Straße 5</p>
 </div>
+</article>
+<article class="termine-card termine-event termine-event-poster reveal">
+<time datetime="2026-11-07">7.11.2026</time>
+<div class="event-copy">
+<h3>Suppenfest</h3>
+<p>6. Multikulturelles Suppenfest in Stockelsdorf, von 17–19 Uhr im Gemeindehaus Ahrensböker Straße 5. Eintritt frei, um eine Spende wird gebeten.</p>
+</div>
+<figure class="event-poster">
+<img src="suppenfest-07-11-2026.jpeg" alt="Plakat zum 6. Multikulturellen Suppenfest am 7. November 2026 in Stockelsdorf" loading="lazy" decoding="async"/>
+</figure>
 </article>
 </div>
 </div>
